@@ -9,7 +9,7 @@ public class Main {
 
         String yesOrNo;
 
-        boolean validInput = false;
+        boolean invalidInput;
         boolean game;
 
         do {
@@ -17,21 +17,24 @@ public class Main {
 
             game = false;
 
-            System.out.print("Do you want to play again: yes or no? ");
+            do {
+                System.out.print("Do you want to play again: yes or no? ");
 
-            yesOrNo = scanner.nextLine();
+                invalidInput = true;
 
-            if (yesOrNo.equalsIgnoreCase("yes") || yesOrNo.equalsIgnoreCase("no")) {
-                validInput = true;
-            }
+                yesOrNo = scanner.nextLine();
+
+                if (yesOrNo.equalsIgnoreCase("yes") || yesOrNo.equalsIgnoreCase("no")) {
+                    invalidInput = false;
+                } else {
+                    System.out.println("Invalid input. Try again");
+                }
+            } while (invalidInput);
 
             if (yesOrNo.equalsIgnoreCase("yes")) {
                 game = true;
             }
 
-            if (!validInput) {
-                System.out.println("Invalid input. Try again");
-            }
-        } while (validInput && game);
+        } while (game);
     }
 }

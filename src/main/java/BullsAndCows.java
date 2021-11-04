@@ -2,7 +2,9 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class BullsAndCows {
-    private static final int TRYMAXNUM = 20;
+    private static final int TRYMAXNUM = 1;
+
+    Random random = new Random();
 
     public void guess() {
         boolean isFind = false;
@@ -50,9 +52,7 @@ public class BullsAndCows {
         }
     }
 
-    private static int getGuessedNum() {
-        Random random = new Random();
-
+    private int getGuessedNum() {
         boolean checker;
 
         int guessedNum;
