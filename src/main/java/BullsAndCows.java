@@ -1,10 +1,10 @@
-import java.util.Random;
+import java.security.SecureRandom;
 import java.util.Scanner;
 
 public class BullsAndCows {
-    private static final int TRYMAXNUM = 1;
+    private static final int TRYMAXNUM = 20;
 
-    Random random = new Random();
+    SecureRandom random = new SecureRandom();
 
     public void guess() {
         boolean isFind = false;
