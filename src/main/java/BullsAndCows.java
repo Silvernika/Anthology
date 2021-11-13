@@ -2,7 +2,7 @@ import java.security.SecureRandom;
 import java.util.Scanner;
 
 public class BullsAndCows {
-    private static final int TRYMAXNUM = 20;
+    private static final int TRYMAXNUM = 2;
 
     SecureRandom random = new SecureRandom();
 
