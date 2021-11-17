@@ -3,6 +3,7 @@ import java.util.Scanner;
 
 public class BullsAndCows {
     private static final int TRYMAXNUM = 2;
+    public static int guess;
 
     SecureRandom random = new SecureRandom();
 
