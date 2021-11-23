@@ -95,11 +95,12 @@ public class TicTacToe implements ActionListener {
  * */
     public void firstTurn() {
 
-        try {
-            Thread.sleep(250);
+        try {Thread.sleep(250);
+
         } catch (InterruptedException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
+            Thread.currentThread().interrupt();
         }
 
         if (random.nextInt(2) == 0) {
