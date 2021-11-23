@@ -1,11 +1,10 @@
-import java.security.SecureRandom;
-import java.util.Scanner;
+package com.company;
+import java.util.Random;
+import  javax.swing.JOptionPane;
 
-public class BullsAndCows {
-    private static final int TRYMAXNUM = 2;
-    public static int guess;
+public class BullsNCows {
+    private static final int TRYMAXNUM = 1;
 
-    SecureRandom random = new SecureRandom();
 
     public void guess() {
         boolean isFind = false;
@@ -13,15 +12,13 @@ public class BullsAndCows {
         String guessedNumStr = Integer.toString(getGuessedNum());
         String inputStr;
 
-        System.out.println(guessedNumStr);
-        System.out.println();
 
         int tryNum = 0;
         int cows;
         int bulls;
 
         while (!isFind && tryNum < TRYMAXNUM) {
-            System.out.print("Guess a number, you have " + (TRYMAXNUM - tryNum) + " attempts: ");
+            JOptionPane.showMessageDialog(null,"Guess a number, you have " + (TRYMAXNUM - tryNum) + " attempts: ");
 
             inputStr = Integer.toString(getInput());
 
@@ -39,17 +36,16 @@ public class BullsAndCows {
             if (bulls == 4) {
                 isFind = true;
             } else {
-                System.out.println("There are " + cows + " cows and " + bulls + " bulls");
-                System.out.println();
+                JOptionPane.showMessageDialog(null,"There are " + cows + " cows and " + bulls + " bulls");
             }
 
             tryNum++;
         }
 
         if (isFind) {
-            System.out.println("You won after " + tryNum + " guesses!");
+            JOptionPane.showMessageDialog(null,"You won after " + tryNum + " guesses!");
         } else {
-            System.out.println("You lose! The number was: " + guessedNumStr);
+            JOptionPane.showMessageDialog(null,"You lose! The number was: " + guessedNumStr);
         }
     }
 
@@ -60,7 +56,7 @@ public class BullsAndCows {
 
         do {
             checker = false;
-
+            Random random = new Random();
             guessedNum = random.nextInt(9000) + 1000;
 
             if (hasDupes(guessedNum)) {
@@ -73,21 +69,28 @@ public class BullsAndCows {
     }
 
     private static int getInput() {
-        Scanner scanner = new Scanner(System.in);
-
         boolean checker;
 
-        int guess;
+        int guess = 0;
 
         do {
             checker = false;
 
-            guess = scanner.nextInt();
+            try {
+                guess = Integer.parseInt(JOptionPane.showInputDialog(null,"Guesed number"));
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null,"Invalid input, try again: ");
+
+                checker = true;
+
+                continue;
+            }
+
 
             if (guess < 1000 || guess > 10000) {
                 checker = true;
 
-                System.out.print("Invalid input, try again: ");
+                JOptionPane.showMessageDialog(null,"Invalid input, try again: ");
 
                 continue;
             }
@@ -95,7 +98,7 @@ public class BullsAndCows {
             if (hasDupes(guess)) {
                 checker = true;
 
-                System.out.print("Your number has dupes, try again: ");
+                JOptionPane.showMessageDialog(null,"Your number has dupes, try again: ");
             }
 
         } while (checker);
@@ -109,5 +112,4 @@ public class BullsAndCows {
                 || checkNum.charAt(0) == checkNum.charAt(3) || checkNum.charAt(1) == checkNum.charAt(2)
                 || checkNum.charAt(1) == checkNum.charAt(3) || checkNum.charAt(2) == checkNum.charAt(3);
     }
-
 }
