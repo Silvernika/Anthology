@@ -3,7 +3,7 @@ import java.util.Random;
 import  javax.swing.JOptionPane;
 
 public class BullsNCows {
-    private static final int TRYMAXNUM = 25;
+    private static final int TRYMAXNUM = 30;
 
     public void guess() {
         boolean isFind = false;
