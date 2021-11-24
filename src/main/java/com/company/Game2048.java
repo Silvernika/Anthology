@@ -18,9 +18,9 @@ public class Game2048 extends JPanel implements ActionListener {
     private static final int TILES_MARGIN = 16;
 
     private Tile[] myTiles;
-    boolean myWin = false;
-    boolean myLose = false;
-    int myScore = 0;
+     boolean myWin = false;
+     boolean myLose = false;
+     int myScore = 0;
 
     public Game2048() {
         setPreferredSize(new Dimension(320, 400));
