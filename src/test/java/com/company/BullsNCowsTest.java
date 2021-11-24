@@ -9,7 +9,7 @@ class BullsNCowsTest {
 
     @Test
     void guess() {
-        assertTrue(bullsNCows.guess());
+        assertFalse(bullsNCows.guess());
 
     }
 }

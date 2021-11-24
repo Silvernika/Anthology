@@ -20,7 +20,7 @@ public class BullsNCows {
         while (!isFind && tryNum < TRYMAXNUM) {
             JOptionPane.showMessageDialog(null,"Guess a number, you have " + (TRYMAXNUM - tryNum) + " attempts: ");
 
-            inputStr = Integer.toString(getInput());
+            inputStr = Integer.toString(getGuessedNum());
 
             cows = 0;
             bulls = 0;
