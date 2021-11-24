@@ -4,8 +4,9 @@ import  javax.swing.JOptionPane;
 
 public class BullsNCows {
     private static final int TRYMAXNUM = 30;
+    public static int guess;
 
-    public void guess() {
+    public boolean guess() {
         boolean isFind = false;
 
         String guessedNumStr = Integer.toString(getGuessedNum());
@@ -41,11 +42,7 @@ public class BullsNCows {
             tryNum++;
         }
 
-        if (isFind) {
-            JOptionPane.showMessageDialog(null,"You won after " + tryNum + " guesses!");
-        } else {
-            JOptionPane.showMessageDialog(null,"You lose! The number was: " + guessedNumStr);
-        }
+        return isFind;
     }
 
     private int getGuessedNum() {
