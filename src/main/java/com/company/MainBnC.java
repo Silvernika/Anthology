@@ -24,11 +24,8 @@ public abstract class MainBnC implements ActionListener {
             boolean game;
 
             do {
-                if (bullsAndCows.guess()) {
-                    JOptionPane.showMessageDialog(null,"You won!");
-                } else {
-                    JOptionPane.showMessageDialog(null,"You lose!");
-                }
+                bullsAndCows.guess();
+
                 do {
 
                     invalidInput = true;
