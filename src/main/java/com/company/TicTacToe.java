@@ -18,7 +18,7 @@ public class TicTacToe implements ActionListener {
     JLabel textfield = new JLabel();
     JButton[] buttons = new JButton[9];
      boolean player1_turn;
-      static boolean flag = true;
+     boolean flag = true;
     ImageIcon image = new ImageIcon("xoxo.png");
     /**
      *  The TicTacToe method is the main method in which the game window is created,
