@@ -4,6 +4,7 @@ import  javax.swing.JOptionPane;
 
 public class BullsNCows {
     private static final int TRYMAXNUM = 30;
+    public static int guess;
 
     public void guess() {
         boolean isFind = false;
